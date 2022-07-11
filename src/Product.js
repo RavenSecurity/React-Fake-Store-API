@@ -1,17 +1,7 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
+import React from 'react'
 
-function Product() {
-    const [posts, setPosts] = useState([])
-    useEffect(() => {
-        axios.get('https://fakestoreapi.com/products')
-        .then(res => {
-            setPosts(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }, [])
+function Product({ posts, setCart, cart }) {
+    
 
   return (
     <div className='Product'>
@@ -21,6 +11,9 @@ function Product() {
                     <img src={post.image}></img>
                     <h1 className='w-64 ml-5'>{post.title} </h1>
                         <h3>{post.price}$</h3>
+                    <button className='Add bg-slate-300 h-9' onClick={() => {
+                        cart.push(post); console.log(cart)}}>
+                            Add</button>
                   </li>)}
         </ul>
     </div>

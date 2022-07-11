@@ -17,12 +17,12 @@ code {
 }
 
 img {
-  width: 20vw;
-  height: auto;
+  width: auto;
+  height: 20vh;
 }
 
 .Product li {
-  height: 20rem;
+  height: 25vh;
   flex: 0 0 100%;
   justify-content: space-around ;
 
