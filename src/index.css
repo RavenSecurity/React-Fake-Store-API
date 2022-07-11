@@ -15,3 +15,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+img {
+  width: 20vw;
+  height: auto;
+}
+
+.Product li {
+  height: 20rem;
+  flex: 0 0 100%;
+  justify-content: space-around ;
+
+}
+
+.Product {
+  width: 80vw;
+}
+
+.Filter {
+  width: 20vw;
+}

@@ -6,7 +6,6 @@ function Product() {
     useEffect(() => {
         axios.get('https://fakestoreapi.com/products')
         .then(res => {
-            console.log(res)
             setPosts(res.data)
         })
         .catch(err => {
@@ -15,11 +14,13 @@ function Product() {
     }, [])
 
   return (
-    <div className=''>
-        <ul className='bg-red-300 flex p-5 flex-wrap'>
+    <div className='Product'>
+        <ul className='flex flex-wrap justify-center p-5'>
             {posts.map(post =>
-                 <li className='p-3' key={post.id}>{post.title} {post.price}
-                  <img src={post.image} height="" width="200"></img>
+                 <li className='p-3 flex' key={post.id}>
+                    <img src={post.image}></img>
+                    <h1 className='w-64 ml-5'>{post.title} </h1>
+                        <h3>{post.price}$</h3>
                   </li>)}
         </ul>
     </div>

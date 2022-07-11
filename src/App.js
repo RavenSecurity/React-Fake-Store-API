@@ -1,15 +1,21 @@
 import Product from "./Product"
+import Filter from "./Filter";
+
 function App() {
 
   return (
-    <div className="App bg-blue-200">
-      <header className="App-header">
+    <div className="App ">
+      <header className="App-header bg-blue-200">
         <p className="text-3xl font-bold text-center p-3">
-          Edit <code>src/App.js</code> and save to reload.
+          Fake Store
         </p>
       </header>
 
+      <div className="flex">
+        <Filter className=''/>
       <Product className=""/>
+      </div>
+      
     </div>
   );
 }
