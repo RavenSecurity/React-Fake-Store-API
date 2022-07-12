@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
-export default function Filter({category}) {
+export default function Filter({ category, setCategory }) {
 
   const [categories, setPosts] = useState([])
     useEffect(() => {
@@ -24,7 +24,7 @@ export default function Filter({category}) {
         {categories.map(post =>
          <li className='p-3 flex' key={post.id}>
           <input type="checkbox" onClick={() => {
-                        category.push(post); console.log(category)}}></input>
+                        setCategory(post); console.log(category)}}></input>
           <h3 className='ml-3'>{post}</h3>
         </li>)}
         </ul>

@@ -12,7 +12,7 @@ function Product({ posts, setCart, cart }) {
                     <h1 className='w-64 ml-5'>{post.title} </h1>
                         <h3>{post.price}$</h3>
                     <button className='Add bg-slate-300 h-9' onClick={() => {
-                        cart.push(post); console.log(cart)}}>
+                        setCart(post.price); console.log(cart)}}>
                             Add</button>
                   </li>)}
         </ul>

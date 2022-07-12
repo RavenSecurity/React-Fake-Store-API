@@ -7,19 +7,31 @@ import axios from 'axios'
 
 
 function App() {
+  
+  const [cart, setCart] = useState([])
+  const [category, setCategory] = useState([])
   const [posts, setPosts] = useState([])
+
     useEffect(() => {
+      if (!category) {
         axios.get('https://fakestoreapi.com/products')
         .then(res => {
             setPosts(res.data)
         })
         .catch(err => {
             console.log(err)
-        })
-    }, [])
+        });
+    } else {
+      axios.get('https://fakestoreapi.com/products/category/' + category)
+    .then(res => {
+        setPosts(res.data)
+    })
+    .catch(err => {
+        console.log(err)
+    })}
+ })
 
-  const [cart, setCart] = useState([])
-  const [category, setCategory] = useState([])
+
 
   return (
     <div className="App ">
