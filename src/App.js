@@ -13,7 +13,7 @@ function App() {
   const [posts, setPosts] = useState([])
 
     useEffect(() => {
-      if (!category) {
+      if (category.length == 0) {
         axios.get('https://fakestoreapi.com/products')
         .then(res => {
             setPosts(res.data)
@@ -35,12 +35,13 @@ function App() {
 
   return (
     <div className="App ">
-      <header className="App-header bg-blue-200">
+      <header className="App-header bg-blue-200 flex justify-around">
+        <p className="text-3xl font-bold text-center p-3"></p>
         <p className="text-3xl font-bold text-center p-3">
           Fake Store
         </p>
 
-        <Cart cart={cart}/>
+        <Cart cart={cart} />
       </header>
 
       <div className="flex">
