@@ -15,9 +15,9 @@ export default function Filter({ category, setCategory }) {
     }, [])
 
 // function
-function addCategory(name) {
-  setCategory([...category, name])
-}
+// function addCategory(name) {
+//   setCategory([...category, name])
+// }
 
   return (
     <div className='Filter p-10 pr-0'>
@@ -26,17 +26,11 @@ function addCategory(name) {
         <ul>
         {categories.map(post =>
          <li className='p-3 flex' key={post.id}>
-          <input type="checkbox" onChange={() => {
-                        addCategory(post); console.log(category)}}></input>
+          <input type="radio"  name="radAnswer" onChange={() => {
+                        setCategory(post); console.log(category)}}></input>
           <h3 className='ml-3'>{post}</h3>
         </li>)}
         </ul>
     </div>
   )
 }
-
-
-// affichage
-// onClick catégorie
-// ça le met dans le state de Filter
-// 2e fetch dans les produits avec la catégorie séléction

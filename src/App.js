@@ -12,24 +12,51 @@ function App() {
   const [category, setCategory] = useState([])
   const [posts, setPosts] = useState([])
 
-    useEffect(() => {
-      if (category.length == 0) {
-        axios.get('https://fakestoreapi.com/products')
-        .then(res => {
-            setPosts(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        });
-    } else {
-      axios.get('https://fakestoreapi.com/products/category/' + category)
-    .then(res => {
-        setPosts(res.data)
-    })
-    .catch(err => {
-        console.log(err)
-    })}
-  }, [category])
+  useEffect(() => {
+    if (category.length == 0) {
+      axios.get('https://fakestoreapi.com/products')
+      .then(res => {
+          setPosts(res.data)
+      })
+      .catch(err => {
+          console.log(err)
+      });
+      
+  } else {
+    axios.get('https://fakestoreapi.com/products/category/' + category)
+  .then(res => {
+      setPosts(res.data)
+      console.log(posts)
+  })
+  .catch(err => {
+      console.log(err)
+  })
+}}, [category])
+
+
+  // Attempt to display several categories at once
+
+  //   useEffect(() => {
+  //     if (category.length == 0) {
+  //       axios.get('https://fakestoreapi.com/products')
+  //       .then(res => {
+  //           setPosts(res.data)
+  //       })
+  //       .catch(err => {
+  //           console.log(err)
+  //       });
+        
+  //   } else for (let index = 0; index < category.length; index++) {
+  //     const element = category[index]; {
+  //     axios.get('https://fakestoreapi.com/products/category/' + element)
+  //   .then(res => {
+  //       setPosts(res.data)
+  //       console.log(posts)
+  //   })
+  //   .catch(err => {
+  //       console.log(err)
+  //   })}
+  // }}, [category])
 
 
 
