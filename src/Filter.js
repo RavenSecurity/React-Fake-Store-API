@@ -14,15 +14,10 @@ export default function Filter({ category, setCategory }) {
         })
     }, [])
 
-    const handleChange = event => {
-      if (event.target.checked) {
-        console.log('✅ Checkbox is checked');
-        setCategory(post);
-        console.log(category)
-      } else {
-        console.log('⛔️ Checkbox is NOT checked');
-      }
-    };
+// function
+function addCategory(name) {
+  setCategory([...category, name])
+}
 
   return (
     <div className='Filter p-10 pr-0'>
@@ -31,7 +26,8 @@ export default function Filter({ category, setCategory }) {
         <ul>
         {categories.map(post =>
          <li className='p-3 flex' key={post.id}>
-          <input type="checkbox" value={post} onChange={handleChange}></input>
+          <input type="checkbox" onChange={() => {
+                        addCategory(post); console.log(category)}}></input>
           <h3 className='ml-3'>{post}</h3>
         </li>)}
         </ul>
