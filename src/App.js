@@ -1,9 +1,12 @@
 import Product from "./Product"
 import Filter from "./Filter";
-import Cart from "./Cart";
+import Total from "./Total";
+import Cart from './routes/Cart';
+
 
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import { Link, Router } from "react-router-dom";
 
 
 function App() {
@@ -66,9 +69,15 @@ function App() {
         <p className="text-3xl font-bold text-center p-3"></p>
         <p className="text-3xl font-bold text-center p-3">
           Fake Store
-        </p>
 
-        <Cart cart={cart} />
+          <Router>
+          <Link to="./routes/Cart">Invoices</Link>
+          </Router>
+        </p>
+        <Total cart={cart} />
+
+
+
       </header>
 
       <div className="flex">

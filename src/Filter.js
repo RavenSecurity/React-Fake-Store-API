@@ -26,9 +26,9 @@ export default function Filter({ category, setCategory }) {
         <ul>
         {categories.map(post =>
          <li className='p-3 flex' key={post.id}>
-          <input type="radio"  name="radAnswer" onChange={() => {
+          <input id={post.id} type="radio"  name="choice" onChange={() => {
                         setCategory(post); console.log(category)}}></input>
-          <h3 className='ml-3'>{post}</h3>
+          <label for={post.id} className='ml-3'>{post}</label>
         </li>)}
         </ul>
     </div>
