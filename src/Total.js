@@ -1,6 +1,4 @@
 import React from 'react'
-import Cart from './routes/Cart';
-import { BrowserRouter, Route, Link } from "react-router-dom";
 
 
 export default function Total({ cart }) {
