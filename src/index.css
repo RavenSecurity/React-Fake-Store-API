@@ -18,7 +18,8 @@ code {
 
 img {
   width: auto;
-  height: 20vh;
+  max-width: 15vw;
+  max-height: 20vh;
 }
 
 .Product li {

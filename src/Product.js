@@ -9,11 +9,11 @@ function Product({ posts, setCart, cart }) {
             {posts.map(post =>
                  <li className='p-3 flex' key={post.id}>
                     <img src={post.image}></img>
-                    <h1 className='w-64 ml-5'>{post.title} </h1>
+                    <h1 className='w-64 ml-2'>{post.title} </h1>
                         <h3>{post.price}$</h3>
-                    <button className='Add bg-slate-300 h-9' onClick={() => {
+                    <button className='Add flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center align-middle' onClick={() => {
                         setCart(prevArray => [...prevArray, post.price]); console.log(cart)}}>
-                            Add</button>
+                            Add to cart</button>
                   </li>)}
         </ul>
     </div>
