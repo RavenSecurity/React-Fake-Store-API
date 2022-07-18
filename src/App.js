@@ -6,6 +6,11 @@ import Total from "./Total";
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
+// TO DO :
+// ADD REACT ROUTER
+// USE REACT MUI
+// SORT BY PRICE
+
 
 function App() {
   
