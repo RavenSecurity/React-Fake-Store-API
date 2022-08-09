@@ -6,6 +6,8 @@ import Total from "./Total";
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
+import  { Link, Outlet } from "react-router-dom";
+
 // TO DO :
 // ADD REACT ROUTER
 // USE REACT MUI
@@ -73,7 +75,8 @@ function App() {
         <p className="text-3xl font-bold text-center p-3">
           Fake Store
         </p>
-        <Total cart={cart} />
+
+        <Link to="/cart"> <Total cart={cart} /> </Link>
 
 
 
@@ -82,6 +85,8 @@ function App() {
       <div className="flex">
         <Filter className='' category={category} setCategory={setCategory}/>
         <Product className="" posts={posts} setCart={setCart} cart={cart}/>
+
+        <Outlet />
       </div>
       
     </div>
