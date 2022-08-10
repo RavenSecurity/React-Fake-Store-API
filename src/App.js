@@ -1,6 +1,7 @@
 import Product from "./Product"
 import Filter from "./Filter";
 import Total from "./Total";
+import Header from "./Header";
 
 
 import React, {useState, useEffect} from 'react'
@@ -9,9 +10,10 @@ import axios from 'axios'
 import  { Link, Outlet } from "react-router-dom";
 
 // TO DO :
-// ADD REACT ROUTER
-// USE REACT MUI
 // SORT BY PRICE
+// Implement JG's code
+// Setup Cart route
+// Redesign the UI
 
 
 function App() {
@@ -78,9 +80,8 @@ function App() {
 
         <Link to="/cart"> <Total cart={cart} /> </Link>
 
-
-
       </header>
+
 
       <div className="flex">
         <Filter className='' category={category} setCategory={setCategory}/>
