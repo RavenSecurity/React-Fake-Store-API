@@ -2,7 +2,6 @@ import React from 'react'
 import  { Link, Outlet } from "react-router-dom";
 import Total from "./Total";
 
-
 export default function Header() {
   return (
     <div>

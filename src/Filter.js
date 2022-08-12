@@ -21,14 +21,14 @@ export default function Filter({ category, setCategory }) {
 
   return (
     <div className='Filter p-10 pr-0'>
-        <p className='mb-3'>Categories</p>
-        <hr></hr>
-        <ul>
+        <p className='mb-3 text-slate-900'>Categories</p>
+        <hr className='w-auto'></hr>
+        <ul className='flex lg:flex-col'>
         {categories.map(post =>
-         <li className='p-3 flex' key={post.id}>
+         <li className='p-3 flex text-slate-900' key={post.id}>
           <input id={post.id} type="radio"  name="choice" onChange={() => {
                         setCategory(post); console.log(category)}}></input>
-          <label for={post.id} className='ml-3'>{post}</label>
+          <label for={post.id} className='ml-3 text-slate-900'>{post}</label>
         </li>)}
         </ul>
     </div>
