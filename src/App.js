@@ -16,9 +16,8 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 // Responsive !
 
 
-function App() {
+function App({cart, setCart}) { 
   
-  const [cart, setCart] = useState([])
   const [category, setCategory] = useState([])
   const [posts, setPosts] = useState([])
 
@@ -50,10 +49,10 @@ function App() {
       <header className="App-header bg-slate-900 flex justify-around">
         <p className="text-3xl font-bold text-center p-3"></p>
         <p className="text-3xl font-bold text-center p-3 text-white">
-          Fake Store
+        <Link to="/">Web Store</Link>
         </p>
         
-        <Link to="/cart"> <Total cart={cart} /> </Link>
+        <Link to="/cart"> <Total cart={cart} setCart={setCart}/>{" "} </Link>
 
       </header>
 

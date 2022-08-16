@@ -4,7 +4,7 @@ function Product({ posts, setCart, cart }) {
     
 
   return (
-    <div className='Product'>
+    <div className='Product w-full'>
         <ul className=' flex-wrap justify-center p-5'>
             {posts.map(post =>
                  <li className='p-3  flex text-slate-900' key={post.id}>
