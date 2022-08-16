@@ -7,7 +7,7 @@ function Product({ posts, setCart, cart }) {
     <div className='Product w-full'>
         <ul className=' flex-wrap justify-center p-5'>
             {posts.map(post =>
-                 <li className='p-3  flex text-slate-900' key={post.id}>
+                 <li className='p-3  flex justify-around text-slate-900' key={post.id}>
                     <img src={post.image}></img>
                     <h1 className='w-auto ml-2 text-slate-900'>{post.title} </h1>
                         <h3>{post.price}$</h3>

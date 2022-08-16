@@ -25,6 +25,4 @@ img {
 .Product li {
   height: 25vh;
   flex: 0 0 100%;
-  justify-content: space-around ;
-
 }
