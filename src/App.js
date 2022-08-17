@@ -11,9 +11,9 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 // TO DO :
 // SORT BY PRICE
 // Implement JG's code
-// Setup Cart route
 // Redesign the UI
 // Responsive !
+// Quantity in cart
 
 
 function App({cart, setCart}) { 
