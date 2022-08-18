@@ -13,7 +13,8 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 // Implement JG's code
 // Redesign the UI
 // Responsive !
-// Quantity in cart
+// Quantity in cart 
+// Product page 
 
 
 function App({cart, setCart}) { 
