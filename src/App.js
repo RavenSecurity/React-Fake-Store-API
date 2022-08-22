@@ -13,18 +13,13 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 // Implement JG's code
 // Redesign the UI
 // Responsive !
-// Quantity in cart 
 // Product page 
-// Address & Billing Page
-// Confirmation Page
-// Thank you Page
+
 
 function App({cart, setCart}) { 
   
   const [category, setCategory] = useState([])
   const [posts, setPosts] = useState([])
-
-
 
   useEffect(() => {
     if (category.length === 0) {
@@ -49,18 +44,16 @@ function App({cart, setCart}) {
 
   return (
     <div className="App ">
-      
 
       <Header cart={cart} setCart={setCart}/>
 
       <div className="lg:flex">
         <Filter className='' category={category} setCategory={setCategory}/>
+
         <ProductList className="" posts={posts} setCart={setCart} cart={cart}/>
 
         <Outlet />
-
       </div>
-      
     </div>
 
   );
