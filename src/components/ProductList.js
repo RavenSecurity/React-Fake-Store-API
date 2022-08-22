@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Product({ posts, setCart, cart }) {
+function ProductList({ posts, setCart, cart }) {
     
 
   return (
@@ -23,4 +23,4 @@ function Product({ posts, setCart, cart }) {
   )
 }
 
-export default Product
+export default ProductList

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { ReactComponent as YourSvg } from './cart.svg';
+import { ReactComponent as YourSvg } from '../assets/cart.svg';
 
 
 export default function Total({ cart }) {

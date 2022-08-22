@@ -1,6 +1,6 @@
-import Product from "./Product"
-import Filter from "./Filter";
-import Total from "./Total";
+import ProductList from "./components/ProductList"
+import Filter from "./components/Filter"
+import Header from "./components/Header";
 
 
 import React, {useState, useEffect} from 'react'
@@ -49,19 +49,13 @@ function App({cart, setCart}) {
 
   return (
     <div className="App ">
-      <header className="App-header bg-slate-900 flex justify-around">
-        <p className="text-3xl font-bold text-center p-3"></p>
-        <p className="text-3xl font-bold text-center p-3 text-white">
-        <Link to="/">React Store</Link>
-        </p>
-        
-        <Link to="/cart"> <Total cart={cart} setCart={setCart}/>{" "} </Link>
+      
 
-      </header>
+      <Header cart={cart} setCart={setCart}/>
 
       <div className="lg:flex">
         <Filter className='' category={category} setCategory={setCategory}/>
-        <Product className="" posts={posts} setCart={setCart} cart={cart}/>
+        <ProductList className="" posts={posts} setCart={setCart} cart={cart}/>
 
         <Outlet />
 

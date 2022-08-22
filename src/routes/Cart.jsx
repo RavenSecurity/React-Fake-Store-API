@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Total from '../Total';
+import Total from '../components/Total';
 
 function Cart({ cart, setCart }) {
 
-  console.log(cart)
-  console.log(cart.map(a => a.price).reduce((a, b) => a + b, 0).toFixed())
     return (
         <>
         <header className="App-header bg-slate-900 flex justify-around">
