@@ -15,8 +15,9 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 // Responsive !
 // Quantity in cart 
 // Product page 
-// Checkout Page 
-// Address & Billing
+// Address & Billing Page
+// Confirmation Page
+// Thank you Page
 
 function App({cart, setCart}) { 
   
