@@ -11,7 +11,7 @@ export default function Header({cart, setCart}) {
         <Link to="/">React Store</Link>
         </p>
         
-        <Link to="/cart"> <Total cart={cart} setCart={setCart}/>{" "} </Link>
+        <Link to="/cart"> <Total cart={cart} setCart={setCart} />{" "} </Link>
 
       </header>
     </div>

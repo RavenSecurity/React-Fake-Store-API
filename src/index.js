@@ -8,6 +8,7 @@ import Cart from './routes/Cart'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function Index() {
+  
   const [cart, setCart] = useState([])
 
   return(

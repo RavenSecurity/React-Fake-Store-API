@@ -15,7 +15,6 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 // Responsive !
 // Product page 
 
-
 function App({cart, setCart}) { 
   
   const [category, setCategory] = useState([])
@@ -42,10 +41,11 @@ function App({cart, setCart}) {
   })
 }}, [category])
 
+
   return (
     <div className="App ">
 
-      <Header cart={cart} setCart={setCart}/>
+      <Header cart={cart} setCart={setCart} />
 
       <div className="lg:flex">
         <Filter className='' category={category} setCategory={setCategory}/>

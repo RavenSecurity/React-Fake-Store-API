@@ -1,7 +1,25 @@
 import React from 'react'
 
 function ProductList({ posts, setCart, cart }) {
-    
+
+  const handleAddProduct = product => {
+    const ProductExist = cart.find(item => item.id === product.id);
+    if (ProductExist) {
+      setCart(
+        cart.map(item =>
+          item.id === product.id
+            ? { ...ProductExist, quantity: ProductExist.quantity + 1 }
+            : item
+        ));
+    } else {
+      setCart([...cart, { 
+        ...product, 
+        'quantity': 1
+      }]);
+    }
+    console.log(cart)
+  };
+  
 
   return (
     <div className='Product w-full'>
@@ -13,8 +31,7 @@ function ProductList({ posts, setCart, cart }) {
                         <h3>{post.price}$</h3>
 
                     <button className='Add flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle'
-                    onClick={() => {
-                        setCart(prevArray => [...prevArray, post]); console.log(cart)}}>
+                    onClick={() => handleAddProduct(post)}>
                             Add to cart</button>
 
                   </li>)}
