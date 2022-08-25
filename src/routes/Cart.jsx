@@ -14,22 +14,28 @@ function Cart({ cart, setCart }) {
     <>
       <Header cart={cart} />
 
-      <div className="Product w-auto">
+      <div className="Product w-full">
         <ul className=" flex-wrap justify-evenly p-5 m-5">
           {cart.map((cart) => (
             // Quan d
             <li
-              className="p-3 flex text-slate-900 justify-evenly"
+              className="p-3 flex text-slate-900 justify-around"
               key={cart.id}
             >
+              <div className='w-1/5'>
               <img src={cart.image}></img>
-              <h1 className="w-auto ml-2 text-slate-900">{cart.title} </h1>
+              </div>
 
-              <h3>{cart.price}$</h3>
+              <h1 className="w-2/5 ml-2 text-slate-900">{cart.title} </h1>
 
+              <div className='w-1/5'>
+
+              <h3 className='w-1/5'>{cart.price}$</h3>
               {/* <button onClick={()}>-</button> */}
-              <h3>{cart.quantity}</h3>
+              <h3>Qty: {cart.quantity}</h3>
               {/* <button onClick={()}>+</button> */}
+              </div>
+
               
 
               <button
