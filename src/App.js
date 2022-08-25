@@ -10,36 +10,49 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 
 // TO DO :
 // SORT BY PRICE
-// Implement JG's code
 // Redesign the UI
 // Responsive !
 // Product page 
 
 function App({cart, setCart}) { 
   
-  const [category, setCategory] = useState([])
   const [posts, setPosts] = useState([])
+  const [ogposts, setOgPosts] = useState([])
+
 
   useEffect(() => {
-    if (category.length === 0) {
-      axios.get('https://fakestoreapi.com/products')
-      .then(res => {
-          setPosts(res.data)
-      })
-      .catch(err => {
-          console.log(err)
-      });
+    axios.get('https://fakestoreapi.com/products')
+    .then(res => {
+        console.log(res)
+        setPosts(res.data)
+        setOgPosts(res.data)
+        
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}, [])
+
+//   useEffect(() => {
+//     if (category.length === 0) {
+//       axios.get('https://fakestoreapi.com/products')
+//       .then(res => {
+//           setPosts(res.data)
+//       })
+//       .catch(err => {
+//           console.log(err)
+//       });
       
-  } else {
-    axios.get('https://fakestoreapi.com/products/category/' + category)
-  .then(res => {
-      setPosts(res.data)
-      console.log(posts)
-  })
-  .catch(err => {
-      console.log(err)
-  })
-}}, [category])
+//   } else {
+//     axios.get('https://fakestoreapi.com/products/category/' + category)
+//   .then(res => {
+//       setPosts(res.data)
+//       console.log(posts)
+//   })
+//   .catch(err => {
+//       console.log(err)
+//   })
+// }}, [category])
 
 
   return (
@@ -48,7 +61,7 @@ function App({cart, setCart}) {
       <Header cart={cart} setCart={setCart} />
 
       <div className="lg:flex">
-        <Filter className='' category={category} setCategory={setCategory}/>
+        <Filter className=''  setPosts={setPosts} posts={posts} ogposts={ogposts} setOgPosts={setOgPosts}/>
 
         <ProductList className="" posts={posts} setCart={setCart} cart={cart}/>
 

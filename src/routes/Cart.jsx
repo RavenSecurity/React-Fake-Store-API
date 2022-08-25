@@ -67,12 +67,3 @@ function Cart({ cart, setCart }) {
 }
 
 export default Cart;
-
-// const totalPrice = useMemo(() => {
-//   if (!cart.length) {
-//     return 0;
-//   }
-//   return cart[price].reduce((a, b) => a + b, 0).toFixed(2);
-// }, [cart]);
-
-// {cart.reduce((a, b) => a + b, 0).toFixed(2)}
