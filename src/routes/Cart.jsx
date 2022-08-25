@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 
 // TO DO :
-// Quantity in cart
 // Address & Billing Page
+// Implement https://stripe.com/en-gb-be system
 // Confirmation Page
 // Thank you Page
 
 function Cart({ cart, setCart }) {
+  
   return (
     <>
       <Header cart={cart} />
@@ -35,8 +36,8 @@ function Cart({ cart, setCart }) {
                 className="Add flex bg-red-400 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
                 onClick={() => {
                   setCart((products) =>
-                    products.filter((_, index) => index !== 0)
-                    // référence à l'odre de l'element
+                    products.filter(del => del.id !== cart.id)
+                    // (_, index) => index !== 0
                   );
                 }}
               >
