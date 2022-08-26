@@ -26,3 +26,8 @@ img {
   height: 25vh;
   flex: 0 0 100%;
 }
+
+.fourfour {
+  max-width: 100%;
+  max-height: 80vh;
+}

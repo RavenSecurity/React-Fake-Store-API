@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import Cart from './routes/Cart'
 import Checkout from './routes/Checkout';
+import FourOFour from './routes/FourOFour';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -20,7 +21,7 @@ function Index() {
       <Route path="checkout" element={<Checkout cart={cart} setCart={setCart}/>} />
       
       {/* Import Page 404 error */}
-      <Route path="*"element={<main style={{ padding: "1rem" }}><p>There's nothing here!</p></main>}/>
+      <Route path="*"element={<FourOFour cart={cart}/>} />
     </Routes>
   </BrowserRouter>
 
