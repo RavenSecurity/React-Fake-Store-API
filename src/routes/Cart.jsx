@@ -9,7 +9,6 @@ import Header from "../components/Header";
 // Thank you Page
 
 function Cart({ cart, setCart }) {
-  
   return (
     <>
       <Header cart={cart} />
@@ -22,27 +21,24 @@ function Cart({ cart, setCart }) {
               className="p-3 flex text-slate-900 justify-around"
               key={cart.id}
             >
-              <div className='w-1/5'>
-              <img src={cart.image}></img>
+              <div className="w-1/5">
+                <img src={cart.image}></img>
               </div>
 
               <h1 className="w-2/5 ml-2 text-slate-900">{cart.title} </h1>
 
-              <div className='w-1/5'>
-
-              <h3 className='w-1/5'>{cart.price}$</h3>
-              {/* <button onClick={()}>-</button> */}
-              <h3>Qty: {cart.quantity}</h3>
-              {/* <button onClick={()}>+</button> */}
+              <div className="w-1/5">
+                <h3 className="w-1/5">{cart.price}$</h3>
+                {/* <button onClick={()}>-</button> */}
+                <h3>Qty: {cart.quantity}</h3>
+                {/* <button onClick={()}>+</button> */}
               </div>
-
-              
 
               <button
                 className="Add flex bg-red-400 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
                 onClick={() => {
-                  setCart((products) =>
-                    products.filter(del => del.id !== cart.id)
+                  setCart(
+                    (products) => products.filter((del) => del.id !== cart.id)
                     // (_, index) => index !== 0
                   );
                 }}
@@ -53,7 +49,9 @@ function Cart({ cart, setCart }) {
           ))}
         </ul>
 
-        <p className="text-center">
+        <div className="flex justify-center">
+
+        <p className="mr-5">
           The total is{" "}
           {cart
             .map((a) => a.price * a.quantity)
@@ -61,6 +59,13 @@ function Cart({ cart, setCart }) {
             .toFixed(2)}{" "}
           $
         </p>
+
+        <button className="bg-orange-300 h-9 w-30 rounded-xl p-3 text-white font-bold mx-5">
+        <Link to="/checkout">Checkout</Link>
+
+        </button>
+        </div>
+
       </div>
     </>
   );
