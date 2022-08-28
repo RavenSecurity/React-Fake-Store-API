@@ -2,12 +2,13 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import "@stripe/stripe-js";
 
 import './index.css';
 import App from './App';
 import Cart from './routes/Cart'
-import Checkout from './routes/Checkout';
 import FourOFour from './routes/FourOFour';
+import Checkout from './routes/Checkout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
