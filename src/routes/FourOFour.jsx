@@ -11,8 +11,9 @@ export default function FourOFour({ cart }) {
       <div className="flex">
         <img src={fourfour} alt="" className="fourfour h-2/5" />
 
-        <div className="flex-col my-10">
+        <div className="flex-col">
         <p>It looks like you got lost?</p>
+        
         <button className="flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle">
         <Link to="/">Homepage</Link>
         </button>

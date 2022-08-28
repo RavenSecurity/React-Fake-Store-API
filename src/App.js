@@ -15,7 +15,9 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 // Product page 
 
 function App({cart, setCart}) { 
-  
+
+
+
   const [posts, setPosts] = useState([])
   const [ogposts, setOgPosts] = useState([])
 
@@ -66,6 +68,7 @@ function App({cart, setCart}) {
         <ProductList className="" posts={posts} setCart={setCart} cart={cart}/>
 
         <Outlet />
+
       </div>
     </div>
 
