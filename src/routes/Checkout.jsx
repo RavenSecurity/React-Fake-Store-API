@@ -7,7 +7,8 @@ export default function Checkout({cart, setCart}) {
     <> 
     <Header cart={cart} setCart={setCart} />
         Stripe incoming
-        </>
+
+    </>
 
   )
 }

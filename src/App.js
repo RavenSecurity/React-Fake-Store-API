@@ -3,8 +3,6 @@ import Filter from "./components/Filter"
 import Header from "./components/Header";
 
 
-
-
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
@@ -15,6 +13,7 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 // Redesign the UI
 // Responsive !
 // Product page 
+// Custom API
 
 function App({cart, setCart}) { 
 

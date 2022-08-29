@@ -9,63 +9,65 @@ import Header from "../components/Header";
 // Thank you Page
 
 function Cart({ cart, setCart }) {
+  const moreQty = (item) => {
+    setCart(
+      item.quantity + 1
+      // (_, index) => index !== 0
+    );
+  };
+
   return (
     <>
       <Header cart={cart} />
 
       <div className="Product w-full">
         <ul className=" flex-wrap justify-evenly p-5 m-5">
-          {cart.map((cart) => (
+          {cart.map((item) => (
             // Quan d
             <li
               className="p-3 flex text-slate-900 justify-around"
-              key={cart.id}
+              key={item.id}
             >
               <div className="w-1/5">
-                <img src={cart.image}></img>
+                <img src={item.image}></img>
               </div>
 
-              <h1 className="w-2/5 ml-2 text-slate-900">{cart.title} </h1>
+              <h1 className="w-2/5 ml-2 text-slate-900">{item.title} </h1>
 
               <div className="w-1/5">
-                <h3 className="w-1/5">{cart.price}$</h3>
-                {/* <button onClick={()}>-</button> */}
-                <h3>Qty: {cart.quantity}</h3>
-                {/* <button onClick={()}>+</button> */}
+                <h3 className="w-1/5">{item.price}$</h3>
+
+                <div className="flex">
+                  <button className="flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle">
+                    -
+                  </button>
+                  <h3>Qty: {item.quantity}</h3>
+                  <button
+                    className="flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
+                    onClick={() => {setCart(item.quantity + 1)}}>+</button>
+                </div>
               </div>
 
-              <button
-                className="Add flex bg-red-400 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
-                onClick={() => {
-                  setCart(
-                    (products) => products.filter((del) => del.id !== cart.id)
-                    // (_, index) => index !== 0
-                  );
-                }}
-              >
-                Remove
-              </button>
+              <button className="Add flex bg-red-400 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
+                onClick={() => {setCart((products) => products.filter((del) => del.id !== item.id))}}>Remove</button>
             </li>
           ))}
         </ul>
 
         <div className="flex justify-center">
+          <p className="mr-5">
+            The total is{" "}
+            {cart
+              .map((a) => a.price * a.quantity)
+              .reduce((a, b) => a + b, 0)
+              .toFixed(2)}{" "}
+            $
+          </p>
 
-        <p className="mr-5">
-          The total is{" "}
-          {cart
-            .map((a) => a.price * a.quantity)
-            .reduce((a, b) => a + b, 0)
-            .toFixed(2)}{" "}
-          $
-        </p>
-
-        <button className="bg-orange-300 h-9 w-30 rounded-xl p-3 text-white font-bold mx-5">
-        <Link to="/checkout">Checkout</Link>
-
-        </button>
+          <button className="bg-orange-300 h-9 w-30 rounded-xl p-3 text-white font-bold mx-5">
+            <Link to="/checkout">Checkout</Link>
+          </button>
         </div>
-
       </div>
     </>
   );
