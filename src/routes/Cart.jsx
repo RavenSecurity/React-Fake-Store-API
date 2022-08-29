@@ -60,14 +60,14 @@ function Cart({ cart, setCart }) {
 
                 <div className="flex mx-1">
                   <button
-                    className="flex bg-orange-300 h-9 w-30 rounded-xl p-1 text-center text-white font-bold align-middle"
+                    className="bg-orange-300 h-5 w-5 rounded-xl p-0 m-1 text-center text-white font-bold "
                     onClick={() => handleSubstractQty(item)}
                   >
                     -
                   </button>
                   <h3>Qty: {item.quantity}</h3>
                   <button
-                    className="flex bg-orange-300 h-9 w-30 rounded-xl p-1 text-center text-white font-bold align-middle"
+                    className="bg-orange-300 h-5 w-5 rounded-xl p-0 m-1 text-center text-white font-bold align-middle"
                     onClick={() => handleAddQty(item)}
                   >
                     +
