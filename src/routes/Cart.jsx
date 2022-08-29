@@ -54,10 +54,10 @@ function Cart({ cart, setCart }) {
 
               <h1 className="w-2/5 ml-2 text-slate-900">{item.title} </h1>
 
-              <div className="w-1/5">
+              <div className="w-1/5 flex">
                 <h3 className="w-1/5">{item.price}$</h3>
 
-                <div className="flex">
+                <div className="flex mx-1">
                   <button
                     className="flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
                     onClick={() => handleSubstractQty(item)}
