@@ -19,17 +19,18 @@ function Cart({ cart, setCart }) {
           : item
       )
     );
+    console.log(cart)
   };
 
   const handleSubstractQty = (product) => {
     const ProductExist = cart.find((item) => item.id === product.id);
-    if (ProductExist.quantity > 0) {
+    if (ProductExist.quantity > 1) {
  setCart(
         cart.map((item) =>
           item.id === product.id
             ? { ...ProductExist, quantity: ProductExist.quantity - 1 }
             : item))
- } else if (ProductExist.quantity === 0){
+ } else if (ProductExist.quantity === 1){
       setCart((products) =>
                     products.filter((del) => del.id !== ProductExist.id)
                   );

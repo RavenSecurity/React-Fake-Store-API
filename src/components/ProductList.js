@@ -17,7 +17,6 @@ function ProductList({ posts, setCart, cart }) {
         'quantity': 1
       }]);
     }
-    console.log(cart)
   };
   
 
