@@ -9,12 +9,32 @@ import Header from "../components/Header";
 // Thank you Page
 
 function Cart({ cart, setCart }) {
-  const moreQty = (item) => {
+  
+  const handleAddQty = (product) => {
+    const ProductExist = cart.find((item) => item.id === product.id);
     setCart(
-      item.quantity + 1
-      // (_, index) => index !== 0
+      cart.map((item) =>
+        item.id === product.id
+          ? { ...ProductExist, quantity: ProductExist.quantity + 1 }
+          : item
+      )
     );
   };
+
+  const handleSubstractQty = (product) => {
+    const ProductExist = cart.find((item) => item.id === product.id);
+    if (ProductExist.quantity > 0) {
+ setCart(
+        cart.map((item) =>
+          item.id === product.id
+            ? { ...ProductExist, quantity: ProductExist.quantity - 1 }
+            : item))
+ } else if (ProductExist.quantity === 0){
+      setCart((products) =>
+                    products.filter((del) => del.id !== ProductExist.id)
+                  );
+ }
+ console.log(cart);}
 
   return (
     <>
@@ -38,18 +58,32 @@ function Cart({ cart, setCart }) {
                 <h3 className="w-1/5">{item.price}$</h3>
 
                 <div className="flex">
-                  <button className="flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle">
+                  <button
+                    className="flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
+                    onClick={() => handleSubstractQty(item)}
+                  >
                     -
                   </button>
                   <h3>Qty: {item.quantity}</h3>
                   <button
                     className="flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
-                    onClick={() => {setCart(item.quantity + 1)}}>+</button>
+                    onClick={() => handleAddQty(item)}
+                  >
+                    +
+                  </button>
                 </div>
               </div>
 
-              <button className="Add flex bg-red-400 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
-                onClick={() => {setCart((products) => products.filter((del) => del.id !== item.id))}}>Remove</button>
+              <button
+                className="Add flex bg-red-400 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
+                onClick={() => {
+                  setCart((products) =>
+                    products.filter((del) => del.id !== item.id)
+                  );
+                }}
+              >
+                Remove
+              </button>
             </li>
           ))}
         </ul>
