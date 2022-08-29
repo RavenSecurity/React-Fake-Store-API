@@ -60,14 +60,14 @@ function Cart({ cart, setCart }) {
 
                 <div className="flex mx-1">
                   <button
-                    className="flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
+                    className="flex bg-orange-300 h-9 w-30 rounded-xl p-1 text-center text-white font-bold align-middle"
                     onClick={() => handleSubstractQty(item)}
                   >
                     -
                   </button>
                   <h3>Qty: {item.quantity}</h3>
                   <button
-                    className="flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
+                    className="flex bg-orange-300 h-9 w-30 rounded-xl p-1 text-center text-white font-bold align-middle"
                     onClick={() => handleAddQty(item)}
                   >
                     +
@@ -76,7 +76,7 @@ function Cart({ cart, setCart }) {
               </div>
 
               <button
-                className="Add flex bg-red-400 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle"
+                className="Add flex bg-red-400 h-9 w-30 rounded-xl p-1 text-center text-white font-bold align-middle"
                 onClick={() => {
                   setCart((products) =>
                     products.filter((del) => del.id !== item.id)
@@ -99,7 +99,7 @@ function Cart({ cart, setCart }) {
             $
           </p>
 
-          <button className="bg-orange-300 h-9 w-30 rounded-xl p-3 text-white font-bold mx-5">
+          <button className="bg-orange-300 h-9 w-30 rounded-xl p-1 text-white font-bold mx-5">
             <Link to="/checkout">Checkout</Link>
           </button>
         </div>

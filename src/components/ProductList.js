@@ -35,7 +35,7 @@ function ProductList({ posts, setCart, cart }) {
 
                     <div className='w-1/5'>
 
-                    <button className='Add flex bg-orange-300 h-9 w-30 rounded-xl p-3 text-center text-white font-bold align-middle'
+                    <button className='Add flex bg-orange-300 h-9 w-30 rounded-xl p-1 text-center text-white font-bold'
                     onClick={() => handleAddProduct(post)}>
                             Add to cart</button>
                     </div>
