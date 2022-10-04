@@ -10,6 +10,8 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 
 // TO DO :
 // SORT BY PRICE
+// Multiple categories at same time
+// Add footer
 // Redesign the UI
 // Responsive !
 // Product page 
