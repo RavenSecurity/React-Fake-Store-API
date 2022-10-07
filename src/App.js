@@ -16,6 +16,7 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 // Responsive !
 // Product page 
 // Custom API
+// Typescript conversion
 
 function App({cart, setCart}) { 
 
