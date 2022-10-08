@@ -17,6 +17,7 @@ import  { BrowserRouter, Link, Outlet, Switch } from "react-router-dom";
 // Product page 
 // Custom API
 // Typescript conversion
+// Start from scratch for a real estate website (react css emotion no typescript yet)
 
 function App({cart, setCart}) { 
 
